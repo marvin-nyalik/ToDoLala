@@ -216,4 +216,3 @@ I would like to thank Microverse team for providing cofiguration files for linte
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-

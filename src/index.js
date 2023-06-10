@@ -1,43 +1,29 @@
 import './style.css';
-import TaskList from './modules/tasksMethods.js';
+import addTask from './addRemove.js';
 import {
-  taskList, addTaskForm, clearList,
-} from './modules/domElements.js';
+  toggleTask,
+  taskDesc,
+  list,
+  navList,
+  clearCompleted,
+} from './utilities.py';
 
-const app = new TaskList();
-
-window.addEventListener('DOMContentLoaded', () => {
-  app.loadTasks();
-});
-
-// Add task event listener
-addTaskForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  app.addTask(e.target.taskDescp.value);
-  e.target.taskDescp.value = '';
-});
-// Toggle edit function
-taskList.addEventListener('click', (e) => {
-  if (e.target.classList.contains('edit-task-btn')) {
-    app.editTask(e.target);
-    e.target.classList.toggle('dsp-none');
-    e.target.nextSibling.classList.toggle('dsp-none');
-  } else if (e.target.classList.contains('delete-task-btn')) {
-    app.deleteTask(e.target.parentElement);
+// Add event listeners
+taskDesc.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    addTask();
   }
 });
 
-// Task checkbox change event
+const publish = document.getElementById('publish');
+publish.addEventListener('click', addTask);
 
-taskList.addEventListener('change', (e) => {
-  if (e.target.tagName === 'INPUT') {
-    e.target.nextSibling.classList.toggle('stk-tru');
-    app.updateTaskStatus(Number(e.target.parentElement.getAttribute('data-index')));
-  }
-});
+const clearChecked = document.getElementById('footer');
+clearChecked.addEventListener('click', clearCompleted);
 
-// Clear list event listener
+// Export the necessary functions and variables
+export {
+  toggleTask, taskDesc, list, navList,
+};
 
-clearList.addEventListener('click', () => {
-  app.clearCompletedTask();
-});
+list();

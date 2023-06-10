@@ -2,37 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script defer src="bundleeaa0a8c9096120e60ebd.js"></script></head>
+    <title>Webpack ToDo List</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script defer src="main.js"></script></head>
 <body>
-    <!-- Main section -->
-    <main>
-        <section class="todo-app">
-            <ul class="task-board">
-                <li class="task-title">
-                    <h3>Today's To Do</h3>
-                    <i class="fa fa-refresh"></i>
-                </li>
-                <li class="add-task">
-                    <form class="add-task-form">
-                        <input type="text" placeholder="Add your list" name="taskDescp" required>
-                        <button type="submit" class="add-task-btn">
-                            <i class="fa fa-sign-in"></i>
-                        </button>
-                    </form>
-                </li>
-                <li class="task-list">
-                    <ul class="task-list-group">
-                        <!-- Tasks will be rendered by javascript -->
-                    </ul>
-                </li>
-                <li class="clear-list">Clear all Completed</li>
-            </ul>
-        </section>
-    </main>
+    <h1 class="heading">My To Do List</h1>
+    <section class="to-do-container" id="to-do-container">
+        <div class="headline">
+            <p class="title">Today's To Do</p>
+            <i class='bx bx-md bx-refresh'></i>
+        </div>
+        <div class="add">
+            <input type="text" id="desc" placeholder="Add to your list (press enter)..." required>
+            <i class='bx bx-subdirectory-left' id="publish"></i>
+        </div>
+        <ul class="nav-list" id="list">
+           
+        </ul>
+        <div class="to-do-footer" id="footer">
+            <p>Clear all completed</p>
+        </div>
+    </section>
 </body>
 </html>
