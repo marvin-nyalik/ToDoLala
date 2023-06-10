@@ -6,7 +6,7 @@ import {
   list,
   navList,
   clearCompleted,
-} from './utilities.py';
+} from './utilities.js';
 
 // Add event listeners
 taskDesc.addEventListener('keydown', (event) => {
